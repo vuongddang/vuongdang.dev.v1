@@ -1,42 +1,54 @@
-export default function Technologies() {
+import { ReactElement } from 'react'
+import reactSvg from '../../public/images/technologies/react.svg'
+import nextSvg from '../../public/images/technologies/nextjs.svg'
+import angularJsSvg from '../../public/images/technologies/angularjs.svg'
+import springSvg from '../../public/images/technologies/spring.svg'
+import mongoDbSvg from '../../public/images/technologies/mongodb.svg'
+import postgresSqlSvg from '../../public/images/technologies/postgresql.svg'
+import elasticSearchSvg from '../../public/images/technologies/elastic.svg'
+import dockerSvg from '../../public/images/technologies/docker.svg'
+import awsSvg from '../../public/images/technologies/aws.svg'
+
+export default function Technologies(): ReactElement {
   const technologies = [
     {
-      imagePath: '/images/technologies/react.svg',
+      imagePath: reactSvg,
       name: 'React',
     },
     {
-      imagePath: '/images/technologies/nextjs.svg',
+      imagePath: nextSvg,
       name: 'Next.js',
     },
     {
-      imagePath: '/images/technologies/angularjs.svg',
+      imagePath: angularJsSvg,
       name: 'AngularJS',
     },
     {
-      imagePath: '/images/technologies/spring.svg',
+      imagePath: springSvg,
       name: 'Spring Framework',
     },
     {
-      imagePath: '/images/technologies/mongodb.svg',
+      imagePath: mongoDbSvg,
       name: 'MongoDB',
     },
     {
-      imagePath: '/images/technologies/postgresql.svg',
+      imagePath: postgresSqlSvg,
       name: 'PostgreSQL',
     },
     {
-      imagePath: '/images/technologies/elastic.svg',
+      imagePath: elasticSearchSvg,
       name: 'Elastic Search',
     },
     {
-      imagePath: '/images/technologies/docker.svg',
+      imagePath: dockerSvg,
       name: 'Docker',
     },
     {
-      imagePath: '/images/technologies/aws.svg',
+      imagePath: awsSvg,
       name: 'Amazon Web Services',
     },
-  ];
+  ]
+
   return (
     <div>
       <div className="mt-8 text-2xl font-medium leading-10 tracking-tight text-gray-800 sm:text-2xl sm:leading-none">
@@ -55,5 +67,5 @@ export default function Technologies() {
         }
       `}</style>
     </div>
-  );
+  )
 }
