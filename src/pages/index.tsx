@@ -1,6 +1,9 @@
-import Technologies from '../components/Technologies';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { GetStaticProps } from 'next'
+import Technologies from '../components/Technologies'
+import { ReactElement } from 'react'
 
-export default function Home() {
+export default function Home(): ReactElement {
   return (
     <>
       <div className="px-4 container min-h-screen mx-auto sm:px-6 lg:px-8">
@@ -9,5 +12,5 @@ export default function Home() {
         </main>
       </div>
     </>
-  );
+  )
 }
