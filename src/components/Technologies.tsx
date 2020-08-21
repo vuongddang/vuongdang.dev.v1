@@ -1,31 +1,22 @@
 import { ReactElement } from 'react'
-import reactSvg from '../../public/images/technologies/react.svg'
-import nextSvg from '../../public/images/technologies/nextjs.svg'
-import angularJsSvg from '../../public/images/technologies/angularjs.svg'
-import springSvg from '../../public/images/technologies/spring.svg'
 import mongoDbSvg from '../../public/images/technologies/mongodb.svg'
 import postgresSqlSvg from '../../public/images/technologies/postgresql.svg'
-import elasticSearchSvg from '../../public/images/technologies/elastic.svg'
-import dockerSvg from '../../public/images/technologies/docker.svg'
-import awsSvg from '../../public/images/technologies/aws.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 export default function Technologies(): ReactElement {
-  const technologies = [
+  const technologies: { icon?: IconProp; name: string; imagePath?: string }[] = [
     {
-      imagePath: reactSvg,
+      icon: ['fab', 'java'],
+      name: 'Java',
+    },
+    {
+      icon: ['fab', 'react'],
       name: 'React',
     },
     {
-      imagePath: nextSvg,
-      name: 'Next.js',
-    },
-    {
-      imagePath: angularJsSvg,
+      icon: ['fab', 'angular'],
       name: 'AngularJS',
-    },
-    {
-      imagePath: springSvg,
-      name: 'Spring Framework',
     },
     {
       imagePath: mongoDbSvg,
@@ -36,36 +27,27 @@ export default function Technologies(): ReactElement {
       name: 'PostgreSQL',
     },
     {
-      imagePath: elasticSearchSvg,
-      name: 'Elastic Search',
-    },
-    {
-      imagePath: dockerSvg,
+      icon: ['fab', 'docker'],
       name: 'Docker',
     },
     {
-      imagePath: awsSvg,
-      name: 'Amazon Web Services',
+      icon: ['fab', 'aws'],
+      name: 'aws',
     },
   ]
 
   return (
     <div>
-      <div className="mt-8 text-2xl font-medium leading-10 tracking-tight text-gray-800 sm:text-2xl sm:leading-none">
-        Technologies I Work With
-      </div>
-      <ul className="grid max-w-md col-gap-8 mt-10 row-gap-14 grid-columns">
-        {technologies.map((technology, i) => (
-          <li key={i}>
-            <img src={technology.imagePath} className="h-14"></img>
+      <div className="mt-12 text-3xl font-medium text-gray-800 sm:text-5xl sm:leading-none">Tech Stack</div>
+      <ul className="grid gap-x-2 gap-y-6 md:gap-6 mt-10 grid-cols-3 md:grid-cols-6 justify-center">
+        {technologies.map((tech, i) => (
+          <li key={i} className="flex flex-col items-center">
+            {tech.icon && <FontAwesomeIcon icon={tech.icon} className="text-5xl text-gray-500" />}
+            {tech.imagePath && <img src={tech.imagePath} className="w-12 h-12 icon-gray text-gray-500" />}
+            <p className="text-gray-500 text-base mt-2">{tech.name}</p>
           </li>
         ))}
       </ul>
-      <style jsx>{`
-        .grid-columns {
-          grid-template-columns: 1fr 1fr 3.5rem;
-        }
-      `}</style>
     </div>
   )
 }

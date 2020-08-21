@@ -3,6 +3,8 @@
 @import 'tailwindcss/components';
 
 /* Your own custom component styles */
-
+body {
+    @apply antialiased;
+}
 /* purgecss end ignore */
 @import 'tailwindcss/utilities';
