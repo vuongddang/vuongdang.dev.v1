@@ -27,8 +27,10 @@ export default function Intro(): ReactElement {
   ]
   return (
     <>
-      <div className="mt-8 text-3xl font-medium text-gray-800 sm:text-6xl sm:leading-none">Vuong Dang</div>
-      <div className="mt-10 text-xl text-gray-500 sm:text-3xl">
+      <div className="mt-8 text-3xl font-medium text-white tracking-tighter sm:text-5xl sm:leading-none">
+        Vuong Dang
+      </div>
+      <div className="mt-10 text-xl text-gray-400 sm:text-3xl">
         A pragmatic Full Stack Developer experienced in building Web applications with Spring Boot / ReactJS / AngularJS
         / AWS and other cool technologies and frameworks.
       </div>

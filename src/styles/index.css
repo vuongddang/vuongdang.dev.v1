@@ -4,7 +4,8 @@
 
 /* Your own custom component styles */
 body {
-    @apply antialiased;
+    @apply antialiased bg-black;
 }
+
 /* purgecss end ignore */
 @import 'tailwindcss/utilities';

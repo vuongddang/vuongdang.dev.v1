@@ -38,13 +38,13 @@ export default function Technologies(): ReactElement {
 
   return (
     <div>
-      <div className="mt-12 text-3xl font-medium text-gray-800 sm:text-5xl sm:leading-none">Tech Stack</div>
-      <ul className="grid gap-x-2 gap-y-6 md:gap-6 mt-10 grid-cols-3 md:grid-cols-6 justify-center">
+      <div className="mt-12 text-3xl font-medium tracking-tighter text-white sm:text-5xl sm:leading-none">Tech Stack</div>
+      <ul className="grid justify-center grid-cols-3 mt-10 gap-x-2 gap-y-6 md:gap-6 md:grid-cols-6">
         {technologies.map((tech, i) => (
           <li key={i} className="flex flex-col items-center">
-            {tech.icon && <FontAwesomeIcon icon={tech.icon} className="text-5xl text-gray-500" />}
-            {tech.imagePath && <img src={tech.imagePath} className="w-12 h-12 icon-gray text-gray-500" />}
-            <p className="text-gray-500 text-base mt-2">{tech.name}</p>
+            {tech.icon && <FontAwesomeIcon icon={tech.icon} className="text-5xl text-gray-400" />}
+            {tech.imagePath && <img src={tech.imagePath} className="w-12 h-12 text-gray-500 icon-gray" />}
+            <p className="mt-2 text-base text-gray-400">{tech.name}</p>
           </li>
         ))}
       </ul>
