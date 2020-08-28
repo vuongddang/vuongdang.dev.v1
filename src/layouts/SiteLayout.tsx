@@ -11,7 +11,6 @@ export default function SiteLayout(props: Props): ReactElement {
       <Head>
         <title>Vuong Dang - Full Stack Software Engineer</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
       </Head>
       <div className="flex flex-col min-h-screen bg-black">
         <Nav />

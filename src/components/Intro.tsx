@@ -43,12 +43,16 @@ export default function Intro(): ReactElement {
                 key={i}
                 className={`flex group items-center justify-center w-10 h-10 sm:w-12 sm:h-12 hover:${
                   socialLink.hoverClass ?? 'bg-gray-900'
-                }  rounded-full shadow-xs outline-none focus:outline-none ${socialLink.bgClass ?? 'bg-gray-800'}`}
+                } focus:${
+                  socialLink.hoverClass ?? 'bg-gray-900'
+                }  rounded-full shadow-xs outline-none focus:outline-none focus:shadow-outline-green ${
+                  socialLink.bgClass ?? 'bg-gray-800'
+                }`}
                 type="button"
               >
                 <FontAwesomeIcon
                   icon={socialLink.icon}
-                  className="text-white  transform group-hover:scale-105 h-5 sm:h-6 transition duration-200 ease-in-out"
+                  className="text-xl sm:text-2xl text-white transition duration-200 ease-in-out transform group-hover:scale-105"
                 />
               </a>
             ))}
