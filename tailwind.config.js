@@ -11,6 +11,9 @@ module.exports = {
         'twitter-blue': '#1da1f2',
         'linkedin-blue': '#0077b5',
       },
+      opacity: {
+        90: '.9',
+      },
     },
   },
   variants: {

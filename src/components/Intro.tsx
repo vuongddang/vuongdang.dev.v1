@@ -1,7 +1,8 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ReactElement } from 'react'
-import heroSvg from '../../public/images/technologies/undraw_fatherhood_7i19.svg'
+import heroSvg from '../../public/images/technologies/undraw_developer_activity_bv83.svg'
+// import heroSvg from '../../public/images/technologies/undraw_fatherhood_7i19.svg'
 export default function Intro(): ReactElement {
   const socialLinks: { icon: IconProp; link: string; bgClass?: string; hoverClass?: string }[] = [
     {
@@ -23,12 +24,12 @@ export default function Intro(): ReactElement {
   ]
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12">
         <div className="lg:-mr-10">
           <div className="mt-10 text-4xl font-medium tracking-tight text-white lg:mt-20 sm:text-5xl sm:leading-none">
             Vuong Dang
           </div>
-          <div className="mt-10 text-xl text-gray-400 lg:text-3xl">
+          <div className="mt-8 text-xl text-gray-400 lg:text-3xl">
             A pragmatic Full Stack Developer experienced in building Web applications with Spring Boot / ReactJS /
             AngularJS / AWS and other cool technologies and frameworks.
           </div>
@@ -40,14 +41,14 @@ export default function Intro(): ReactElement {
                 target="_blank"
                 rel="noreferrer"
                 key={i}
-                className={`flex group items-center justify-center w-11 h-11 sm:w-12 sm:h-12 hover:${
+                className={`flex group items-center justify-center w-10 h-10 sm:w-12 sm:h-12 hover:${
                   socialLink.hoverClass ?? 'bg-gray-900'
                 }  rounded-full shadow-xs outline-none focus:outline-none ${socialLink.bgClass ?? 'bg-gray-800'}`}
                 type="button"
               >
                 <FontAwesomeIcon
                   icon={socialLink.icon}
-                  className="text-white  transform group-hover:scale-105 h-6 transition duration-200 ease-in-out"
+                  className="text-white  transform group-hover:scale-105 h-5 sm:h-6 transition duration-200 ease-in-out"
                 />
               </a>
             ))}
@@ -55,7 +56,7 @@ export default function Intro(): ReactElement {
         </div>
 
         <div>
-          <img src={heroSvg} alt="star" />
+          <img src={heroSvg} alt="Software Engineer" className="opacity-90" />
         </div>
       </div>
     </>
