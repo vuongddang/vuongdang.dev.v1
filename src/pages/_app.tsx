@@ -1,8 +1,17 @@
 import { AppProps } from 'next/app'
 import '../styles/index.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { ReactElement } from 'react'
+import SiteLayout from '../layouts/SiteLayout'
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+library.add(fab, faCoffee)
+
+export default function MyApp({ Component, pageProps }: AppProps): ReactElement {
+  return (
+    <SiteLayout>
+      <Component {...pageProps} />
+    </SiteLayout>
+  )
 }
-
-export default MyApp

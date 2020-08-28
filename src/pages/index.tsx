@@ -1,15 +1,17 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { GetStaticProps } from 'next'
-import Technologies from '../components/Technologies'
 import { ReactElement } from 'react'
+import Intro from '../components/Intro'
 
 export default function Home(): ReactElement {
   return (
     <>
-      <div className="px-4 container min-h-screen mx-auto sm:px-6 lg:px-8">
-        <main className="flex flex-col items-center">
+      <div className=" grid grid-cols-1 lg:gap-8">
+        <div>
+          <Intro />
+        </div>
+        {/* <div>
           <Technologies />
-        </main>
+        </div> */}
       </div>
     </>
   )

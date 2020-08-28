@@ -1,8 +1,27 @@
 /* purgecss start ignore */
+@font-face {
+    font-family: 'Biko';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/Biko_Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'Biko';
+    font-style: bold;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/fonts/Biko_Bold.otf") format("opentype");
+}
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 
 /* Your own custom component styles */
+body {
+    @apply bg-black;
+}
 
 /* purgecss end ignore */
 @import 'tailwindcss/utilities';
