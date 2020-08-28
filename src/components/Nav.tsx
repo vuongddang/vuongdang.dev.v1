@@ -11,6 +11,7 @@ export default function Nav(): ReactElement {
           <div className="sm:block sm:ml-6">
             <div className="flex">
               <a
+                ref={(a) => a && a.focus()}
                 href="https://blog.vuongdang.dev"
                 className="px-3 pt-3 pb-2 font-medium leading-4 tracking-wider text-white transition duration-150 ease-in-out rounded-md hover:bg-gray-800 focus:outline-none focus:text-white focus:bg-gray-700"
               >
