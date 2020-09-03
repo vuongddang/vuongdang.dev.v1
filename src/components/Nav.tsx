@@ -6,7 +6,7 @@ export default function Nav(): ReactElement {
         <div className="flex items-center justify-between h-24">
           <div className="flex-shrink-0 text-lg leading-6 tracking-wider text-white">
             Vuong Dang
-            <p className="opacity-50">Software Engineer</p>
+            <p className="opacity-50 text-gray-300">Software Engineer</p>
           </div>
           <div className="sm:block sm:ml-6">
             <div className="flex">

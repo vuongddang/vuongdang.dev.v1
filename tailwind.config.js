@@ -7,12 +7,17 @@ module.exports = {
       fontFamily: {
         sans: ['Biko', ...defaultTheme.fontFamily.sans],
       },
-      colors: {
-        'twitter-blue': '#1da1f2',
-        'linkedin-blue': '#0077b5',
-      },
       opacity: {
+        10: '.1',
+        20: '.2',
+        30: '.3',
+        40: '.4',
+        50: '.5',
+        60: '.6',
+        70: '.7',
+        80: '.8',
         90: '.9',
+        100: '1',
       },
     },
   },
