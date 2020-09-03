@@ -30,8 +30,8 @@ export default function Intro(): ReactElement {
             Vuong Dang
           </div>
           <div className="mt-8 text-xl text-gray-400 lg:text-3xl">
-            A pragmatic Full Stack Developer experienced in building Web applications with Spring Boot / ReactJS /
-            AngularJS / AWS and other cool technologies and frameworks.
+            A Full Stack Developer with 15+ years of experience in building Web applications with Spring Boot, ReactJS,
+            AngularJS, AWS and other cool technologies and frameworks.
           </div>
 
           <div className="flex items-center mt-10 space-x-2">
