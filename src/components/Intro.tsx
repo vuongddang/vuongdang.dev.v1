@@ -15,7 +15,7 @@ export default function Intro(): ReactElement {
     },
     {
       icon: ['fab', 'linkedin'],
-      link: 'https://www.linkedin.com/in/vuong-dang-b223b8b',
+      link: 'https://www.linkedin.com/in/vuong-dang',
     },
     {
       icon: ['fab', 'dev'],
