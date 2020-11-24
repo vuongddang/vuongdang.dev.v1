@@ -4,22 +4,26 @@ import { ReactElement } from 'react'
 import heroSvg from '../../public/images/technologies/undraw_developer_activity_bv83.svg'
 // import heroSvg from '../../public/images/technologies/undraw_fatherhood_7i19.svg'
 export default function Intro(): ReactElement {
-  const socialLinks: { icon: IconProp; link: string; bgClass?: string; hoverClass?: string }[] = [
+  const socialLinks: { icon: IconProp; link: string; bgClass?: string; hoverClass?: string; label?: string }[] = [
     {
       icon: ['fab', 'twitter'],
       link: 'https://twitter.com/VuongDDang',
+      label: 'Twitter',
     },
     {
       icon: ['fab', 'github'],
       link: 'https://github.com/vuongddang',
+      label: 'Github',
     },
     {
       icon: ['fab', 'linkedin'],
       link: 'https://www.linkedin.com/in/vuong-dang',
+      label: 'Linkedin',
     },
     {
       icon: ['fab', 'dev'],
       link: 'https://dev.to/vuongddang',
+      label: 'Dev Community',
     },
   ]
   return (
@@ -42,6 +46,7 @@ export default function Intro(): ReactElement {
                 href={socialLink.link}
                 target="_blank"
                 rel="noreferrer"
+                aria-label={socialLink.label}
                 key={i}
                 className={`flex group items-center justify-center w-10 h-10 sm:w-12 sm:h-12 hover:${
                   socialLink.hoverClass ?? 'bg-gray-900'

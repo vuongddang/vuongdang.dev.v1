@@ -7,7 +7,7 @@ type Props = {
 }
 export default function SiteLayout(props: Props): ReactElement {
   return (
-    <>
+    <html lang="en">
       <Head>
         <title>Vuong Dang - Full Stack Software Engineer</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -16,6 +16,6 @@ export default function SiteLayout(props: Props): ReactElement {
         <Nav />
         <main className="flex-grow w-full px-4 pb-20 mx-auto max-w-7xl sm:px-6 lg:px-8">{props.children}</main>
       </div>
-    </>
+    </html>
   )
 }
