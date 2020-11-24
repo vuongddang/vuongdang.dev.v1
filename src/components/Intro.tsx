@@ -26,12 +26,14 @@ export default function Intro(): ReactElement {
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12">
         <div className="lg:-mr-10">
-          <div className="mt-10 text-4xl font-medium tracking-tight text-white lg:mt-20 sm:text-5xl sm:leading-none">
-            Vuong Dang
+          <div className="mt-10 text-2xl tracking-tight text-white lg:mt-20 sm:text-4xl sm:leading-none">
+            <div>
+              Hi, I&apos;m <span className="text-green-500">Vuong Dang</span>.
+            </div>
           </div>
-          <div className="mt-8 text-xl text-gray-400 lg:text-3xl">
-            A Full Stack Developer with 15+ years of experience in building Web applications with Spring Boot, ReactJS,
-            AngularJS, AWS and other cool technologies and frameworks.
+          <div className="mt-8 text-xl text-gray-400 lg:text-2xl">
+            I'm a full-stack web developer. I build web applications with Spring Boot, ReactJS, AngularJS, AWS, and
+            other cool technologies and frameworks.
           </div>
 
           <div className="flex items-center mt-10 space-x-2">
@@ -45,14 +47,14 @@ export default function Intro(): ReactElement {
                   socialLink.hoverClass ?? 'bg-gray-900'
                 } focus:${
                   socialLink.hoverClass ?? 'bg-gray-900'
-                }  rounded-full shadow-xs outline-none focus:outline-none focus:shadow-outline-green ${
+                }  rounded-full shadow-xs outline-none focus:outline-none focus:ring focus:ring-opacity-70 focus:ring-green-600 ${
                   socialLink.bgClass ?? 'bg-gray-800'
                 }`}
                 type="button"
               >
                 <FontAwesomeIcon
                   icon={socialLink.icon}
-                  className="text-xl sm:text-2xl text-white transition duration-200 ease-in-out transform group-hover:scale-105"
+                  className="text-xl text-white transition duration-200 ease-in-out transform sm:text-2xl group-hover:scale-105"
                 />
               </a>
             ))}

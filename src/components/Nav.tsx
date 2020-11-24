@@ -6,14 +6,16 @@ export default function Nav(): ReactElement {
         <div className="flex items-center justify-between h-24">
           <div className="flex-shrink-0 text-lg leading-6 tracking-wider text-white">
             Vuong Dang
-            <p className="opacity-50 text-gray-300">Software Engineer</p>
+            <p className="text-gray-300 opacity-50">Software Engineer</p>
           </div>
           <div className="sm:block sm:ml-6">
             <div className="flex">
               <a
                 ref={(a) => a && a.focus()}
+                target="_blank"
+                rel="noreferrer"
                 href="https://blog.vuongdang.dev"
-                className="px-3 pt-3 pb-2 font-medium leading-4 tracking-wider text-white transition duration-150 ease-in-out rounded-md hover:bg-gray-800 focus:outline-none focus:text-white focus:bg-gray-700"
+                className="px-3 pt-3 pb-2 font-medium leading-4 tracking-wider text-white transition duration-150 ease-in-out rounded-md focus:ring focus:ring-opacity-70 focus:ring-green-600 hover:bg-gray-800 focus:outline-none focus:text-white focus:bg-gray-900"
               >
                 My Blog
               </a>
