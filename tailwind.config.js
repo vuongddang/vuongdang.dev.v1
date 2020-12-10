@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+// const colors = require('tailwindcss/colors')
 
 module.exports = {
   purge: ['./src/components/**/*.{ts,tsx,js,jsx}', './src/pages/**/*.{ts,tsx,js,jsx}'],
@@ -7,6 +8,9 @@ module.exports = {
       fontFamily: {
         sans: ['Biko', ...defaultTheme.fontFamily.sans],
       },
+      // colors: {
+      //   gray: colors.gray,
+      // },
     },
   },
   variants: {

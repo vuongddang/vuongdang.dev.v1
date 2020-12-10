@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import { ReactElement } from 'react'
+import React, { ReactElement } from 'react'
+import Footer from '../components/Footer'
 import Nav from '../components/Nav'
 
 type Props = {
@@ -15,6 +16,7 @@ export default function SiteLayout(props: Props): ReactElement {
       <div className="flex flex-col min-h-screen bg-black">
         <Nav />
         <main className="flex-grow w-full px-4 pb-20 mx-auto max-w-7xl sm:px-6 lg:px-8">{props.children}</main>
+        <Footer />
       </div>
     </html>
   )
