@@ -1,20 +1,3 @@
-@font-face {
-    font-family: 'Biko';
-    font-style: normal;
-    font-weight: 400;
-    font-display: block;
-    src: url("/fonts/Biko_Regular.otf") format("opentype");
-}
-
-@font-face {
-    font-family: 'Biko';
-    font-style: bold;
-    font-weight: 700;
-    /* don't render anything to the end user while the font loads */
-    font-display: block;
-    src: url("/fonts/Biko_Bold.otf") format("opentype");
-}
-
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 

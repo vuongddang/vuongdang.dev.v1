@@ -30,12 +30,12 @@ export default function Intro(): ReactElement {
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12">
         <div className="lg:-mr-10">
-          <div className="mt-10 text-2xl tracking-tight text-white lg:mt-20 sm:text-4xl sm:leading-none">
+          <div className="mt-10 text-3xl tracking-tight text-white lg:mt-20 sm:text-6xl sm:leading-none font-medium">
             <div>
               Hi, I&apos;m <span className="text-green-500">Vuong Dang</span>.
             </div>
           </div>
-          <div className="mt-8 text-xl text-gray-400 lg:text-2xl">
+          <div className="mt-8 text-xl text-gray-400 sm:text-2xl sm:leading-10 font-medium">
             I'm a full-stack web developer. I build web applications with Spring Boot, ReactJS, AngularJS, AWS, and
             other cool technologies and frameworks.
           </div>
