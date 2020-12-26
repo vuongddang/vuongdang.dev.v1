@@ -26,7 +26,7 @@ export default function PostPage({ mdxSource, frontMatter }: PostPageProps): Rea
   const content = hydrate(mdxSource, { components })
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
-      <h1 className="mt-10 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl sm:mt-14">
+      <h1 className="mt-10 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl sm:mt-14">
         {frontMatter.title}
       </h1>
 
