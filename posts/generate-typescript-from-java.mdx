@@ -1,0 +1,101 @@
+---
+title: Generate Typescript from Java
+brief: If you develop the backend with Java and the frontend with TypeScript, chances are you might need to have the same DTO classes/interfaces on both ends. 
+date: '2020-07-23T16:39:02.000Z'
+---
+
+If you develop the backend with Java and the frontend with TypeScript, chances are you might need to have the same DTO classes/interfaces on both ends. 
+
+In this case, wouldn't it be great if we can define the DTO classes on the backend, and *generate* Typescript classes automatically.
+
+Thanks to [typescript-generator](https://github.com/vojtechhabarta/typescript-generator), we just have to configure the maven plugin or create a Gradle task.
+
+#### For Maven
+Add the following plugin to your pom file
+```xml
+<plugin>
+	<groupId>cz.habarta.typescript-generator</groupId>
+	<artifactId>typescript-generator-maven-plugin</artifactId>
+	<version>2.24.612</version>
+	<executions>
+		<execution>
+			<id>generate</id>
+			<goals>
+				<goal>generate</goal>
+			</goals>
+			<phase>process-classes</phase>
+		</execution>
+	</executions>
+	<configuration>
+		<jsonLibrary>jackson2</jsonLibrary>
+		<classes>
+			<class>com.example.demo.dto.CompanyDto</class>
+		</classes>
+		<outputFile>target/company.ts</outputFile>
+		<outputKind>module</outputKind>
+		<outputFileType>implementationFile</outputFileType>
+		<mapClasses>asClasses</mapClasses>
+		<mapEnum>asEnum</mapEnum>
+		<nonConstEnums>true</nonConstEnums>
+		<optionalProperties>useLibraryDefinition</optionalProperties>
+	</configuration>
+</plugin>
+```
+
+When you run `./mvnw clean install`, the generated TypeScript file will be available under `target/company.ts`
+
+#### For Gradle
+
+Configure the plugin and Create the task with the exact name `generateTypeScript`
+```javascript
+apply plugin: 'cz.habarta.typescript-generator'
+buildscript {
+    repositories {
+        mavenCentral()
+   	    jcenter()
+    }
+    dependencies {
+        classpath group: 'cz.habarta.typescript-generator', name: 'typescript-generator-gradle-plugin', version: '2.24.612'
+    }
+}
+
+generateTypeScript {
+    jsonLibrary = 'jackson2'
+    classes = [
+            'com.example.demo.dto.CompanyDto'
+              ]
+    outputFile = 'build/company.ts'
+    outputKind = 'module'
+    outputFileType = 'implementationFile'
+    mapClasses = 'asClasses'
+    mapEnum = 'asEnum'
+    nonConstEnums = true
+    optionalProperties = 'useLibraryDefinition'
+}
+
+```
+You can run the Gradle task manually: `./gradlew generateTypeScript` or make another task in your build chain depends on it. [[1]](https://docs.gradle.org/current/userguide/more_about_tasks.html)
+ 
+In the above example, I added the following configurations to override the default behavior.
+
+* `outputFile`: Path and name of generated TypeScript file.
+* `outputFileType`: Output file format, can be:
+  * `declarationFile` (.d.ts)
+  * `implementationFile` (.ts)
+* `mapClasses`: Specifies whether Java classes will be mapped to TypeScript classes or interfaces.  Supported values are:
+  * `asInterfaces`
+  * `asClasses`
+* `mapEnum`: Specifies how enums will be mapped. Supported values are:
+  * `asUnion` - creates type alias to union of string enum values
+  * `asInlineUnion` - creates union of enum values on places where the enum is used
+  * `asEnum` - creates string enum. Requires TypeScript 2.4
+  * `asNumberBasedEnum` - creates enum of named number values
+* `nonConstEnums`: If true generated enums will not have const keyword. This can be used only in implementation files
+* `optionalProperties`: Specifies how properties are defined to be optional. Supported values are:
+  * `useSpecifiedAnnotations` - annotations specified using `optionalAnnotations` or `requiredAnnotations` parameter
+  * `useLibraryDefinition` - examples: `@JsonProperty(required = false)` when using jackson2 library or `@XmlElement(required = false)` when using jaxb library
+  * `all` - all properties are optional
+
+Learn more about configuring ` typescript-generator-maven-plugin` plugin in the [Configuration Documentation](http://www.habarta.cz/typescript-generator/maven/typescript-generator-maven-plugin/generate-mojo.html)
+
+The example with maven can be found here on [GitHub](https://github.com/vuongddang/java-to-typescript-generator-example).

@@ -1,0 +1,127 @@
+---
+title: Nextjs TailwindCSS Typescript Starter
+date: '2020-07-21T16:24:09.000Z'
+brief: Create a Next.js TailwindCSS Typescript Starter from scratch 
+---
+
+I had a chance to integrate TailwindCSS into our existing AngularJS (Bootstrap) app and use it for developing new features. Even though it is hard for the migration, It is incredibly rewarding (Also for migrating Gulp to Webpack and start using TypeScript 😌)
+
+Today I'm checking out Next.js by setting up a starter template with Nextjs, TailwindCSS, and Typescript.
+
+Source code for the template can be found here [Github](https://github.com/vuongddang/nextjs-tailwindcss-typescript-starter).
+
+
+
+### Create new next.js app
+Run the following command in your Terminal and follow the wizard. As a result, a new directory containing the app will be created for you.
+```
+npx create-next-app
+```
+
+
+### Start the app
+Run the development server and Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```
+npm run dev
+```
+
+
+### Create src directory and move pages into src (Optional)
+The [src](https://nextjs.org/docs/advanced-features/src-directory) directory is very common in many apps and Next.js supports it by default.
+```
+cd <your-app-directory>
+mkdir src
+mv pages src
+```
+
+
+### Support TypeScript
+Next.js supports TypeScript out of the box. More info [here](https://nextjs.org/docs/basic-features/typescript)
+```
+touch tsconfig.json
+npm i -D typescript @types/react @types/node
+```
+
+
+Restart development server by running `npm run dev`, you will see this in the console:
+`We detected TypeScript in your project and created a tsconfig.json file for you.`
+
+Test TypeScript support by renaming index.js to index.tsx and restart development server
+```
+mv src/pages/index.js src/pages/index.tsx
+```
+
+
+
+### Integrate TailwindCSS
+Install TailwindCSS, postcss and PurgeCSS. More information can be found in the official TailwindCSS documentation. [Installation](https://tailwindcss.com/docs/installation), [Optimizing for Production](https://tailwindcss.com/docs/controlling-file-size)
+```
+npm i -D tailwindcss postcss-import autoprefixer
+```
+
+
+#### Configure PostCSS
+Create `postcss.config.js`
+```
+touch postcss.config.js
+```
+```javascript
+module.exports = {
+  plugins: [
+    'tailwindcss',
+    'autoprefixer',
+  ]
+}
+```
+
+
+#### Configure PurgeCSS for production build
+Create `tailwind.config.js` to enable PurgeCSS and [customize](https://tailwindcss.com/docs/configuration) your tailwind. By default, Tailwind will only remove unused classes that it generates itself. That means the unused styles from your custom CSS or from third-party CSS will not be removed. More info can be found here [Optimizing for Production](https://tailwindcss.com/docs/controlling-file-size)
+
+```
+npx tailwindcss init
+```
+```javascript
+module.exports = {
+  purge: ['./src/components/**/*.{ts,tsx,js,jsx}', './src/pages/**/*.{ts,tsx,js,jsx}'],
+  theme: {
+    extend: {},
+  },
+  variants: {},
+  plugins: [],
+}
+```
+
+
+#### Add TailwindCSS to your css
+Create `src/styles/index.css`.
+```
+mkdir src/styles && touch src/styles/index.css
+``` 
+```css
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* Your own custom component styles */
+
+@import 'tailwindcss/utilities';
+```
+
+
+
+Create a src/pages/_app.tsx file Then add styles/index.css to your application by import the CSS file.
+```
+touch src/pages/_app.tsx
+```
+```typescript
+import { AppProps } from 'next/app'
+import '../styles/index.css'
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+```
+
+### Enjoy the power of Next.js TailwindCSS and TypeScript ♥
