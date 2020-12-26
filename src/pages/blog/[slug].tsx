@@ -6,7 +6,9 @@ import renderToString from 'next-mdx-remote/render-to-string'
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
-
+import mdxPrism from 'mdx-prism-2'
+// import 'prismjs/themes/prism-okaidia.css'
+import 'prism-themes/themes/prism-material-dark.css'
 interface PostPageProps {
   mdxSource: MdxRemote.Source
   frontMatter: any //TODO define type of frontMatter
@@ -39,7 +41,7 @@ export const getStaticProps: GetStaticProps<PostPageProps> = async ({ params }) 
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
-      rehypePlugins: [],
+      rehypePlugins: [mdxPrism],
     },
     scope: data,
   })
@@ -60,12 +62,8 @@ export const getStaticPaths = async () => {
     // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }))
 
-  const result = {
+  return {
     paths,
     fallback: false,
   }
-
-  console.log('+++', result)
-
-  return result
 }

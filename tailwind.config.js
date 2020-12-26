@@ -39,22 +39,22 @@ module.exports = {
             },
 
             h1: {
-              color: theme('colors.gray.200'),
+              color: theme('colors.gray.300'),
             },
             h2: {
-              color: theme('colors.gray.200'),
+              color: theme('colors.gray.300'),
             },
             h3: {
-              color: theme('colors.gray.200'),
+              color: theme('colors.gray.300'),
             },
             h4: {
-              color: theme('colors.gray.200'),
+              color: theme('colors.gray.300'),
             },
             h5: {
-              color: theme('colors.gray.200'),
+              color: theme('colors.gray.300'),
             },
             h6: {
-              color: theme('colors.gray.200'),
+              color: theme('colors.gray.300'),
             },
 
             strong: {

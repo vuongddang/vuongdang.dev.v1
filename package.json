@@ -1,5 +1,5 @@
 {
-  "name": "vuongddang",
+  "name": "vuongdang.dev",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,7 +14,10 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.12",
     "@tailwindcss/typography": "^0.3.1",
+    "date-fns": "^2.16.1",
     "next": "^10.0.2",
+    "next-mdx-remote": "^2.0.0",
+    "prism-themes": "^1.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -30,9 +33,12 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "gray-matter": "^4.0.2",
-    "next-mdx-remote": "^2.0.0",
+    "install": "^0.13.0",
+    "mdx-prism-2": "^2.0.0",
+    "npm": "^6.14.10",
     "postcss-import": "^13.0.0",
     "prettier": "^2.2.0",
+    "prismjs": "^1.22.0",
     "reading-time": "^1.2.1",
     "tailwindcss": "^2.0.1",
     "typescript": "^4.1.2",
