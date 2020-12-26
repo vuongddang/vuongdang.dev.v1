@@ -15,11 +15,11 @@ interface Props {
 export default function Home({ posts }: Props): ReactElement {
   return (
     <>
-      <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8 pb-24 sm:pt-10">
+      <div className="max-w-6xl px-4 pb-24 mx-auto sm:px-6 md:px-8 sm:pt-10">
         <Intro />
       </div>
-      <div className="px-4 bg-gray-900 pt-16 pb-16 sm:py-24 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <div className="pt-16 pb-16 bg-gray-900 sm:py-24 ">
+        <div className="max-w-6xl px-4 mx-auto sm:px-6 md:px-8">
           <RecentBlogPosts posts={posts} />
         </div>
       </div>
