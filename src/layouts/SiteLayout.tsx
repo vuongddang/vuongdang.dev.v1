@@ -15,7 +15,7 @@ export default function SiteLayout(props: Props): ReactElement {
       </Head>
       <div className="flex flex-col min-h-screen bg-black">
         <Nav />
-        <main className="flex-grow w-full px-4 pb-20 mx-auto max-w-7xl sm:px-6 lg:px-8">{props.children}</main>
+        <main className="flex-grow w-full mx-auto">{props.children}</main>
         <Footer />
       </div>
     </html>

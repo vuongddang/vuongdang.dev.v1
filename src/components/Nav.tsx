@@ -2,14 +2,14 @@ import { ReactElement } from 'react'
 export default function Nav(): ReactElement {
   return (
     <nav className="flex-shrink-0 bg-black">
-      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div className="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <div className="flex-shrink-0 text-lg leading-6 tracking-wider text-white">
             Vuong Dang
-            <p className="text-gray-300 opacity-50">Software Engineer</p>
+            <p className="text-gray-300 opacity-70">Software Engineer</p>
           </div>
           <div className="sm:block sm:ml-6">
-            <div className="flex">
+            {/* <div className="flex">
               <a
                 ref={(a) => a && a.focus()}
                 target="_blank"
@@ -19,7 +19,7 @@ export default function Nav(): ReactElement {
               >
                 My Blog
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

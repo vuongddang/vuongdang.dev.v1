@@ -1,0 +1,74 @@
+---
+title: How to use Fontawesome in Next.js
+date: '2020-08-19T16:41:44.000Z'
+brief: This article discusses how to use Fontawesome 5 in a Next.js project. The code example is written in TypeScript.
+---
+
+This article discusses how to use Fontawesome 5 - [free version](https://fontawesome.com/plans) in a Next.js project. The code example is written in TypeScript.
+
+## 1. Install dependencies
+```bash
+npm i --save @fortawesome/fontawesome-svg-core \
+             @fortawesome/free-solid-svg-icons \
+             @fortawesome/free-brands-svg-icons \
+             @fortawesome/react-fontawesome
+```
+
+## 2. Use it like a pro
+This is the easiest way to get started, you import individual icons and use it directly in your component.
+```typescript
+import { ReactElement } from 'react'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+export default function MyComponent(): ReactElement {
+  return <FontAwesomeIcon icon={faCoffee} />
+}
+```
+
+## 3. A little more complex way
+Imagine you use the same icon in multiple components but you don't want to import it in every component. 
+
+This can be done by defining a library in your pages/_app.tsx.
+
+In the code below, You add all brand icons `fab`, and a single coffee icon `faCoffee` into the library. 
+
+```typescript
+import { AppProps } from 'next/app'
+import '../styles/index.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { ReactElement } from 'react'
+
+library.add(fab, faCoffee)
+
+export default function MyApp({ Component, pageProps }: AppProps): ReactElement {
+  return <Component {...pageProps} />
+}
+
+```
+
+In your component, you can refer to the icon in the library.
+
+In your library, you added all brand icons `fab`. Therefore you will refer to a particular icon (e.g `twitter`) in the set by specifying `['fab', 'twitter']`. On the other hand, you imported a single `faCoffee` so you refer to the icon name `coffee` directly.
+
+```typescript
+import { ReactElement } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+export default function IconFromLibrary(): ReactElement {
+  return (
+    <>
+      <FontAwesomeIcon icon={['fab', 'twitter']} />
+      <FontAwesomeIcon icon="coffee" />
+    </>
+  )
+}
+```
+
+## Conclusion
+This article covered the configuration and two ways you can use Fontawesome in your next.js project.
+
+More information can be found in the 
+[react-fontawesome](https://github.com/FortAwesome/react-fontawesome) documentation.
