@@ -4,7 +4,7 @@ import { ReactElement } from 'react'
 import heroSvg from '../../public/images/technologies/undraw_developer_activity_bv83.svg'
 // import heroSvg from '../../public/images/technologies/undraw_fatherhood_7i19.svg'
 export default function Intro(): ReactElement {
-  const socialLinks: { icon: IconProp; link: string; bgClass?: string; hoverClass?: string; label?: string }[] = [
+  const socialLinks: { icon: IconProp; link: string; label: string }[] = [
     {
       icon: ['fab', 'twitter'],
       link: 'https://twitter.com/VuongDDang',
@@ -30,12 +30,12 @@ export default function Intro(): ReactElement {
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-12">
         <div className="lg:-mr-10">
-          <div className="mt-10 text-3xl tracking-tight text-white lg:mt-20 sm:text-6xl sm:leading-none font-medium">
+          <div className="mt-10 text-3xl font-medium tracking-tight text-white lg:mt-20 sm:text-6xl sm:leading-none">
             <div>
               Hi, I&apos;m <span className="text-green-500">Vuong Dang</span>.
             </div>
           </div>
-          <div className="mt-8 text-xl text-gray-400 sm:text-2xl sm:leading-10 font-medium">
+          <div className="mt-8 text-xl font-medium text-gray-400 sm:text-2xl sm:leading-10">
             <p>
               I'm a full-stack web developer who has built software products from the ground up. I'm motivated by new
               technologies, product success, and business growth.
@@ -55,19 +55,10 @@ export default function Intro(): ReactElement {
                 rel="noreferrer"
                 aria-label={socialLink.label}
                 key={i}
-                className={`flex group items-center justify-center w-10 h-10 sm:w-12 sm:h-12 hover:${
-                  socialLink.hoverClass ?? 'bg-gray-900'
-                } focus:${
-                  socialLink.hoverClass ?? 'bg-gray-900'
-                }  rounded-full shadow-xs outline-none focus:outline-none focus:ring focus:ring-opacity-70 focus:ring-green-600 ${
-                  socialLink.bgClass ?? 'bg-gray-800'
-                }`}
+                className="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full shadow-xs outline-none group sm:w-12 sm:h-12 hover:bg-gray-700 focus:bg-gray-900 focus:outline-none focus:ring focus:ring-opacity-70 focus:ring-green-600"
                 type="button"
               >
-                <FontAwesomeIcon
-                  icon={socialLink.icon}
-                  className="text-xl text-white transition duration-200 ease-in-out transform sm:text-2xl group-hover:scale-105"
-                />
+                <FontAwesomeIcon icon={socialLink.icon} className="h-5 text-white sm:h-6" />
               </a>
             ))}
           </div>
