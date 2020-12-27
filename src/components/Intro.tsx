@@ -4,7 +4,7 @@ import { ReactElement } from 'react'
 import heroSvg from '../../public/images/technologies/undraw_developer_activity_bv83.svg'
 // import heroSvg from '../../public/images/technologies/undraw_fatherhood_7i19.svg'
 export default function Intro(): ReactElement {
-  const socialLinks: { icon: IconProp; link: string; bgClass?: string; hoverClass?: string; label?: string }[] = [
+  const socialLinks: { icon: IconProp; link: string; label: string }[] = [
     {
       icon: ['fab', 'twitter'],
       link: 'https://twitter.com/VuongDDang',
@@ -55,16 +55,10 @@ export default function Intro(): ReactElement {
                 rel="noreferrer"
                 aria-label={socialLink.label}
                 key={i}
-                className={`flex group items-center justify-center w-10 h-10 sm:w-12 sm:h-12 hover:${
-                  socialLink.hoverClass ?? 'bg-gray-700'
-                } focus:${
-                  socialLink.hoverClass ?? 'bg-gray-900'
-                }  rounded-full shadow-xs outline-none focus:outline-none focus:ring focus:ring-opacity-70 focus:ring-green-600 ${
-                  socialLink.bgClass ?? 'bg-gray-800'
-                }`}
+                className="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full shadow-xs outline-none group sm:w-12 sm:h-12 hover:bg-gray-700 focus:bg-gray-900 focus:outline-none focus:ring focus:ring-opacity-70 focus:ring-green-600"
                 type="button"
               >
-                <FontAwesomeIcon icon={socialLink.icon} className="h-5 sm:h-6 text-white" />
+                <FontAwesomeIcon icon={socialLink.icon} className="h-5 text-white sm:h-6" />
               </a>
             ))}
           </div>
