@@ -15,7 +15,7 @@ const SEO: NextSeoProps = {
     url: 'https://vuongdang.dev/',
     images: [
       {
-        url: 'https://vuongdang.dev/images/cover.png',
+        url: 'https://vuongdang.dev/images/cover.jpg',
         alt: title,
         width: 1200,
         height: 630,
