@@ -1,13 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ReactElement } from 'react'
-import Intro from '../components/Intro'
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-import { MdxFrontMatter } from '../models/mdx.model'
+import Intro from '@components/Intro'
+import { MdxFrontMatter } from '@models/mdx.model'
 import { GetStaticProps } from 'next'
-import readingTime from 'reading-time'
-import RecentBlogPosts from '../components/RecentBlogPosts'
+import RecentBlogPosts from '@components/RecentBlogPosts'
+import { getAllPostsFrontMatter } from '@shared/utils/MdxUtils'
 
 interface Props {
   posts: MdxFrontMatter[]
@@ -27,20 +24,9 @@ export default function Home({ posts }: Props): ReactElement {
   )
 }
 
-// TODO: Extract util methods
-const POSTS_DIR = path.join(process.cwd(), 'posts')
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const posts: MdxFrontMatter[] = fs
-    .readdirSync(POSTS_DIR)
-    .filter((fileName) => /\.mdx$/.test(fileName))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.mdx$/, '')
-      const postFilePath = path.join(POSTS_DIR, fileName)
-      const { content, data } = matter(fs.readFileSync(postFilePath))
-
-      return { ...data, slug, readingTimeStats: readingTime(content) }
-    }) as MdxFrontMatter[]
-
+  const posts: MdxFrontMatter[] = await getAllPostsFrontMatter()
+  // Sort all post by date desc
   posts.sort((a, b) => (a.date > b.date ? -1 : 1))
 
   return { props: { posts } }
