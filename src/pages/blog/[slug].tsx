@@ -2,25 +2,17 @@ import { GetStaticProps } from 'next'
 import { ReactElement } from 'react'
 import { MdxRemote } from 'next-mdx-remote/types'
 import hydrate from 'next-mdx-remote/hydrate'
-import renderToString from 'next-mdx-remote/render-to-string'
-import path from 'path'
-import fs from 'fs'
-import matter from 'gray-matter'
-import mdxPrism from 'mdx-prism-2'
-import ClockIcon from '../../components/ClockIcon'
-import Date from '../../components/Date'
+import ClockIcon from '@components/ClockIcon'
+import Date from '@components/Date'
 import Image from 'next/image'
 
 import 'prism-themes/themes/prism-material-dark.css'
-import { MdxFrontMatter } from '../../models/mdx.model'
-import readingTime from 'reading-time'
-interface PostPageProps {
-  mdxSource: MdxRemote.Source
-  frontMatter: MdxFrontMatter //TODO define type of frontMatter
-}
+import { ParsedMdx } from '@models/mdx.model'
+import { getAllSlugs, parsePostAsMdxFile } from '@shared/utils/MdxUtils'
 
-const POSTS_DIR = path.join(process.cwd(), 'posts')
 const components: MdxRemote.Components = {}
+
+type PostPageProps = ParsedMdx
 
 export default function PostPage({ mdxSource, frontMatter }: PostPageProps): ReactElement {
   const content = hydrate(mdxSource, { components })
@@ -66,39 +58,16 @@ export default function PostPage({ mdxSource, frontMatter }: PostPageProps): Rea
 }
 
 export const getStaticProps: GetStaticProps<PostPageProps> = async ({ params }) => {
-  const postFilePath = path.join(POSTS_DIR, `${params.slug}.mdx`)
-
-  const { content, data } = matter(fs.readFileSync(postFilePath))
-
-  const mdxSource = await renderToString(content, {
-    components,
-    // Optionally pass remark/rehype plugins
-    mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [mdxPrism],
-    },
-    scope: data,
-  })
-
-  const frontMatter = {
-    ...data,
-    slug: params.slug as string,
-    readingTimeStats: readingTime(content),
-  } as MdxFrontMatter
-
+  const parsedMdx = await parsePostAsMdxFile(params.slug as string)
   return {
-    props: { mdxSource, frontMatter: frontMatter },
+    props: parsedMdx,
   }
 }
 
-// TODO: Fix missing return type warning
 // Read all file paths in posts directory, and return the list of {params: {slug: slug}}
 export const getStaticPaths = async () => {
-  const paths = fs
-    .readdirSync(POSTS_DIR)
-    .filter((path) => /\.mdx?$/.test(path))
-    // Remove file extensions for each file name
-    .map((path) => path.replace(/\.mdx?$/, ''))
+  const slugs = await getAllSlugs()
+  const paths = slugs
     // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }))
 
