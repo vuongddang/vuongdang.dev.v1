@@ -36,8 +36,15 @@ export default function Intro(): ReactElement {
             </div>
           </div>
           <div className="mt-8 text-xl text-gray-400 sm:text-2xl sm:leading-10 font-medium">
-            I'm a full-stack web developer. I build web applications with Spring Boot, ReactJS, AngularJS, AWS, and
-            other cool technologies and frameworks.
+            <p>
+              I'm a full-stack web developer who has built software products from the ground up. I'm motivated by new
+              technologies, product success, and business growth.
+            </p>
+            <p className="mt-8">
+              Even though my expertise is in building scalable backend services and data-intensive applications with
+              Spring Boot and AWS, I've been leaning toward front end development (React) and Serverless Architecture in
+              the recent year.
+            </p>
           </div>
 
           <div className="flex items-center mt-10 space-x-2">
