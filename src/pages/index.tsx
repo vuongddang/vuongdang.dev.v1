@@ -27,7 +27,7 @@ export default function Home({ posts }: Props): ReactElement {
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const posts: MdxFrontMatter[] = await getAllPostsFrontMatter()
   // Sort all post by date desc
-  posts.sort((a, b) => (a.date > b.date ? -1 : 1))
+  posts.sort((a, b) => (a.publishedTime > b.publishedTime ? -1 : 1))
 
   return { props: { posts } }
 }
