@@ -74,6 +74,10 @@ module.exports = {
     },
   },
   variants: {
+    extend: {
+      ringWidth: ['hover'],
+      ringColor: ['hover'],
+    },
     scale: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
   plugins: [

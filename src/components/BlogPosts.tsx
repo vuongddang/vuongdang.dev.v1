@@ -6,17 +6,15 @@ import ClockIcon from './ClockIcon'
 interface Props {
   posts: MdxFrontMatter[]
 }
-export default function RecentBlogPosts({ posts }: Props): ReactElement {
+export default function BlogPosts({ posts }: Props): ReactElement {
   return (
     <>
-      {/* <h2 className="text-5xl font-bold tracking-tight text-gray-100">Recent Blog Posts</h2> */}
-      <h2 className="text-3xl font-extrabold tracking-wide text-gray-100 uppercase sm:text-6xl opacity-20">
-        Recent Blog Posts
-      </h2>
       {posts.map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}`}>
-          <a className="block mt-24">
-            <h3 className="text-3xl font-bold tracking-tight text-gray-300 sm:text-4xl ">{post.title}</h3>
+          <a className="block mt-24 rounded sm:p-3 group focus:outline-none sm:focus:ring-2 sm:focus:ring-green-600">
+            <h3 className="text-3xl font-bold tracking-tight group-hover:text-green-400 text-gray-300 sm:text-4xl ">
+              {post.title}
+            </h3>
             <div className="flex items-center mt-3 text-gray-500">
               <Date isoString={post.publishedTime} />
               <ClockIcon className="w-5 h-5 ml-6" />
