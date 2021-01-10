@@ -34,5 +34,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   // Sort all post by date desc
   posts.sort((a, b) => (a.publishedTime > b.publishedTime ? -1 : 1))
 
-  return { props: { posts } }
+  const recentPosts = posts.slice(0, 3)
+  return { props: { posts: recentPosts } }
 }
