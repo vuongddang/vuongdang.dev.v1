@@ -2,8 +2,9 @@ import { MdxRemote } from 'next-mdx-remote/types'
 
 export interface MdxFrontMatter {
   title: string
-  publishedTime: string
   summary: string
+  publishedTime: string
+  canonicalUrl: string
   slug: string
   readingTimeStats: {
     text: string
