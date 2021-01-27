@@ -20,7 +20,7 @@ export default function BlogSeo({ frontMatter }: Props): ReactElement {
       <NextSeo
         title={`${frontMatter.title} - ${authorName}`}
         description={frontMatter.summary}
-        canonical={url}
+        canonical={frontMatter.canonicalUrl ?? url}
         openGraph={{
           url,
           title: frontMatter.title,
