@@ -35,15 +35,15 @@ export default function Intro(): ReactElement {
               Hi, I&apos;m <span className="text-green-500">Vuong Dang</span>.
             </div>
           </div>
-          <div className="mt-8 text-xl font-medium text-gray-400 sm:text-2xl sm:leading-10">
+          <div className="mt-8 text-xl text-gray-400 sm:text-2xl sm:leading-10">
             <p>
               I'm a full-stack web developer who has built software products from the ground up. I'm motivated by new
               technologies, product success, and business growth.
             </p>
             <p className="mt-8">
-              Even though my expertise is in building scalable backend services and data-intensive applications with
-              Spring Boot and AWS, I've been leaning toward front end development (React) and Serverless Architecture in
-              the recent year.
+              My expertise is in building scalable backend services and data-intensive applications with Spring Boot and
+              AWS, I've been leaning toward front end development (React) and Serverless Architecture in the recent
+              year.
             </p>
           </div>
 
