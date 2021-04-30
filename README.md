@@ -14,6 +14,12 @@
 
 ## Getting Started
 
+Make sure to update node to the latest stable version
+
+```bash
+ node -v && sudo n stable && node -v
+```
+
 Install dependencies:
 
 ```bash
