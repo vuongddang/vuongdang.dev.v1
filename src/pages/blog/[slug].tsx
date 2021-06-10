@@ -1,7 +1,6 @@
 import { GetStaticProps } from 'next'
 import { ReactElement } from 'react'
-import { MdxRemote } from 'next-mdx-remote/types'
-import hydrate from 'next-mdx-remote/hydrate'
+import { MDXRemote } from 'next-mdx-remote'
 import ClockIcon from '@components/ClockIcon'
 import Date from '@components/Date'
 import Image from 'next/image'
@@ -11,12 +10,11 @@ import { ParsedMdx } from '@models/mdx.model'
 import { getAllSlugs, parsePostAsMdxFile } from '@shared/utils/MdxUtils'
 import BlogSeo from '@components/BlogSeo'
 
-const components: MdxRemote.Components = {}
+const components = {}
 
 type PostPageProps = ParsedMdx
 
 export default function PostPage({ mdxSource, frontMatter }: PostPageProps): ReactElement {
-  const content = hydrate(mdxSource, { components })
   return (
     <>
       <BlogSeo frontMatter={frontMatter} />
@@ -55,7 +53,9 @@ export default function PostPage({ mdxSource, frontMatter }: PostPageProps): Rea
             </a>
           </div>
         </div>
-        <main className="mt-10 text-gray-300 prose prose-dark md:prose-2xl max-w-none ">{content}</main>
+        <main className="mt-10 text-gray-300 prose prose-dark md:prose-2xl max-w-none ">
+          <MDXRemote {...mdxSource} components={components} />
+        </main>
       </article>
     </>
   )

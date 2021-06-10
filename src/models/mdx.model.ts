@@ -1,4 +1,4 @@
-import { MdxRemote } from 'next-mdx-remote/types'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 
 export interface MdxFrontMatter {
   title: string
@@ -15,6 +15,6 @@ export interface MdxFrontMatter {
 }
 
 export interface ParsedMdx {
-  mdxSource: MdxRemote.Source
+  mdxSource: MDXRemoteSerializeResult
   frontMatter: MdxFrontMatter
 }

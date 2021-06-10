@@ -2,7 +2,7 @@ import { MdxFrontMatter, ParsedMdx } from '@models/mdx.model'
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
-import renderToString from 'next-mdx-remote/render-to-string'
+import { serialize } from 'next-mdx-remote/serialize'
 import mdxPrism from 'mdx-prism-2'
 import readingTime from 'reading-time'
 
@@ -13,7 +13,7 @@ export async function parsePostAsMdxFile(slug: string): Promise<ParsedMdx> {
 
   const { content, data } = matter(fs.readFileSync(postFilePath))
 
-  const mdxSource = await renderToString(content, {
+  const mdxSource = await serialize(content, {
     // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
