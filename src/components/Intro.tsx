@@ -2,6 +2,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ReactElement } from 'react'
 import heroSvg from '../../public/images/technologies/undraw_developer_activity_bv83.svg'
+import Image from 'next/image'
 // import heroSvg from '../../public/images/technologies/undraw_fatherhood_7i19.svg'
 export default function Intro(): ReactElement {
   const socialLinks: { icon: IconProp; link: string; label: string }[] = [
@@ -65,7 +66,7 @@ export default function Intro(): ReactElement {
         </div>
 
         <div>
-          <img src={heroSvg} alt="Software Engineer" className="opacity-90" />
+          <Image src={heroSvg} alt="Software Engineer" className="opacity-90" />
         </div>
       </div>
     </>

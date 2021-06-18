@@ -3,9 +3,10 @@ import mongoDbSvg from '../../public/images/technologies/mongodb.svg'
 import postgresSqlSvg from '../../public/images/technologies/postgresql.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
+import Image from 'next/image'
 
 export default function Technologies(): ReactElement {
-  const technologies: { icon?: IconProp; name: string; imagePath?: string }[] = [
+  const technologies: { icon?: IconProp; name: string; imagePath?: StaticImageData }[] = [
     {
       icon: ['fab', 'java'],
       name: 'Java',
@@ -43,7 +44,7 @@ export default function Technologies(): ReactElement {
         {technologies.map((tech, i) => (
           <li key={i} className="flex flex-col items-center">
             {tech.icon && <FontAwesomeIcon icon={tech.icon} className="text-5xl text-gray-400" />}
-            {tech.imagePath && <img src={tech.imagePath} className="w-12 h-12 text-gray-500 icon-gray" />}
+            {tech.imagePath && <Image src={tech.imagePath} alt={tech.name} className="w-12 h-12 text-gray-500 icon-gray" />}
             <p className="mt-2 text-base text-gray-400">{tech.name}</p>
           </li>
         ))}
