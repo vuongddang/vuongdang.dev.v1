@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ReactElement } from 'react'
 import heroSvg from '../../public/images/technologies/undraw_developer_activity_bv83.svg'
 import Image from 'next/image'
-// import heroSvg from '../../public/images/technologies/undraw_fatherhood_7i19.svg'
+
 export default function Intro(): ReactElement {
   const socialLinks: { icon: IconProp; link: string; label: string }[] = [
     {
@@ -38,12 +38,12 @@ export default function Intro(): ReactElement {
           </div>
           <div className="mt-8 text-xl text-gray-400 sm:text-2xl sm:leading-10">
             <p>
-              I'm a full-stack web developer who has built software products from the ground up. I'm motivated by new
-              technologies, product success, and business growth.
+              I&apos;m a full-stack web developer who has built software products from the ground up. I&apos;m motivated
+              by new technologies, product success, and business growth.
             </p>
             <p className="mt-8">
               My expertise is in building scalable backend services and data-intensive applications with Spring Boot and
-              AWS, I've been leaning toward front end development (React) and Serverless Architecture in the recent
+              AWS, I&apos;ve been leaning toward front end development (React) and Serverless Architecture in the recent
               year.
             </p>
           </div>
