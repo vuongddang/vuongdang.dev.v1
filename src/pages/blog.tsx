@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ReactElement } from 'react'
 import Intro from '@components/Intro'
 import { MdxFrontMatter } from '@models/mdx.model'
