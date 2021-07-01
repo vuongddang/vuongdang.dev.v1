@@ -3,7 +3,7 @@
 
 /* Your own custom component styles */
 body {
-  @apply bg-black;
+    @apply bg-black;
 }
 
 @import 'tailwindcss/utilities';
