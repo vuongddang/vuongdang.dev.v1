@@ -54,8 +54,7 @@ export default function Intro(): ReactElement {
                 rel="noreferrer"
                 aria-label={socialLink.label}
                 key={i}
-                className="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full shadow-xs outline-none group sm:w-12 sm:h-12 hover:bg-gray-700 focus:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-green-600"
-                type="button"
+                className="flex items-center justify-center w-10 h-10 bg-gray-800 rounded-full shadow-xs focus-outline-green group sm:w-12 sm:h-12 transition-colors hover:bg-gray-700 focus:bg-gray-900"
               >
                 <FontAwesomeIcon icon={socialLink.icon} className="h-5 text-white sm:h-6" />
               </a>

@@ -1,9 +1,15 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-/* Your own custom component styles */
-body {
-    @apply bg-black;
+@layer base {
+    body {
+        @apply bg-black;
+    }
 }
 
-@import 'tailwindcss/utilities';
+@layer components {
+    .focus-outline-green {
+        @apply outline-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-600;
+    }
+}

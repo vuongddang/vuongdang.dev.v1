@@ -5,6 +5,8 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { ReactElement } from 'react'
 import SiteLayout from '../layouts/SiteLayout'
 
+import 'focus-visible';
+
 library.add(fab)
 
 export default function MyApp({ Component, pageProps }: AppProps): ReactElement {
