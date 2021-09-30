@@ -29,7 +29,6 @@ export default function PostPage({ mdxSource, frontMatter }: PostPageProps): Rea
             target="_blank"
             rel="nofollow noreferrer noopener"
             className="flex-shrink-0"
-            type="button"
             aria-label="Twitter"
           >
             <span className="sr-only">Twitter</span>

@@ -13,7 +13,7 @@ export default function Nav(): ReactElement {
           </Link>
           <div className="sm:block sm:ml-6">
             <Link href="/blog">
-              <a className="px-3 py-2 font-medium leading-4 tracking-wider text-white transition duration-150 ease-in-out rounded-md focus:ring-2 focus:ring-green-600 hover:bg-gray-800 focus:outline-none focus:text-white focus:bg-gray-900">
+              <a className="px-3 py-2 font-medium leading-4 tracking-wider text-white transition duration-150 ease-in-out rounded-md focus-outline-green hover:bg-gray-800 focus:outline-none focus:text-white focus:bg-gray-900">
                 Blog
               </a>
             </Link>
