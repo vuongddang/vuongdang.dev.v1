@@ -1,7 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
-// const colors = require('tailwindcss/colors')
 
 module.exports = {
+  mode: 'jit',
   purge: [
     './src/components/**/*.{ts,tsx,js,jsx}',
     './src/layouts/**/*.{ts,tsx,js,jsx}',
@@ -12,9 +12,6 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
-      // colors: {
-      //   gray: colors.gray,
-      // },
       typography: (theme) => ({
         default: {
           css: {
@@ -82,6 +79,5 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
-    // ...
   ],
 }
