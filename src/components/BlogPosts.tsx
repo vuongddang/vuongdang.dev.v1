@@ -12,7 +12,7 @@ export default function BlogPosts({ posts }: Props): ReactElement {
     <>
       {posts.map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}`}>
-          <a className="block mt-24 rounded sm:p-3 group focus:outline-none sm:focus-visible:ring-2 sm:focus-visible:ring-green-600">
+          <a className="block mt-24 rounded group focus:outline-none sm:focus-visible:ring-2 sm:focus-visible:ring-green-600">
             <h3 className="text-3xl font-bold tracking-tight text-gray-300 group-hover:text-green-400 sm:text-4xl transition-colors">
               {post.title}
             </h3>

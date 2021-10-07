@@ -13,7 +13,7 @@ export default function Home({ posts }: Props): ReactElement {
   return (
     <>
       <div className="pt-16 pb-16 sm:py-24 ">
-        <div className="max-w-6xl px-4 mx-auto sm:px-6 md:px-8">
+        <div className="max-w-screen-xl px-4 mx-auto sm:px-6 md:px-8">
           <h2 className="text-4xl font-extrabold tracking-tight text-gray-100 sm:text-6xl">Blog</h2>
           <BlogPosts posts={posts} />
         </div>
