@@ -12,14 +12,12 @@ interface Props {
 export default function Home({ posts }: Props): ReactElement {
   return (
     <>
-      <div className="max-w-6xl px-4 pb-24 mx-auto sm:px-6 md:px-8 sm:pt-10">
-        <div className="sm:px-3">
-          <Intro />
-        </div>
+      <div className="max-w-screen-xl px-4 pb-24 mx-auto sm:px-6 md:px-8 sm:pt-10">
+        <Intro />
       </div>
       <div className="pt-16 pb-16 bg-gray-900 sm:py-24 ">
-        <div className="max-w-6xl px-4 mx-auto sm:px-6 md:px-8">
-          <h2 className="text-3xl font-extrabold tracking-wide text-gray-100 uppercase sm:text-6xl opacity-20 sm:px-3">
+        <div className="max-w-screen-xl px-4 mx-auto sm:px-6 md:px-8">
+          <h2 className="text-3xl font-extrabold tracking-wide text-gray-100 uppercase sm:text-6xl opacity-30 sm:opacity-20">
             Recent Blog Posts
           </h2>
           <BlogPosts posts={posts} />
