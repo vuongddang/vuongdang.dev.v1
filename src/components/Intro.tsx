@@ -32,7 +32,7 @@ export default function Intro(): ReactElement {
         <div className="lg:-mr-10">
           <div className="mt-10 text-3xl font-medium tracking-tight text-white lg:mt-20 sm:text-6xl sm:leading-none">
             <div>
-              Hi, I&apos;m <span className="text-green-500">Vuong Dang</span>.
+              Hi, I&apos;m <span className="text-green-500">Vuong Dang</span>
             </div>
           </div>
           <div className="mt-8 text-xl text-gray-400 sm:text-2xl sm:leading-10">
