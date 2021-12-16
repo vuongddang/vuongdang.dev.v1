@@ -28,7 +28,8 @@
       "@shared/*": [
         "shared/*"
       ]
-    }
+    },
+    "incremental": true
   },
   "exclude": [
     "node_modules"

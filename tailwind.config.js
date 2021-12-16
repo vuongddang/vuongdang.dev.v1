@@ -1,8 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  mode: 'jit',
-  purge: [
+  content: [
     './src/components/**/*.{ts,tsx,js,jsx}',
     './src/layouts/**/*.{ts,tsx,js,jsx}',
     './src/pages/**/*.{ts,tsx,js,jsx}',
@@ -15,7 +14,7 @@ module.exports = {
       typography: (theme) => ({
         default: {
           css: {
-            color: theme('colors.gray.900'),
+            color: theme('colors.gray.800'),
             a: {
               color: theme('colors.blue.700'),
               '&:hover': {
@@ -69,13 +68,6 @@ module.exports = {
         },
       }),
     },
-  },
-  variants: {
-    extend: {
-      ringWidth: ['hover'],
-      ringColor: ['hover'],
-    },
-    scale: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
   plugins: [
     require('@tailwindcss/typography'),
