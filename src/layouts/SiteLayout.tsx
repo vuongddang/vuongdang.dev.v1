@@ -16,7 +16,7 @@ export default function SiteLayout(props: Props): ReactElement {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <DefaultSeo {...SEO} />
-      <div className="flex flex-col min-h-screen bg-black">
+      <div className="flex flex-col min-h-screen bg-slate-800">
         <Nav />
         <main className="flex-grow w-full mx-auto">{props.children}</main>
         <Footer />

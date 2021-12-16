@@ -18,12 +18,12 @@ export default function PostPage({ mdxSource, frontMatter }: PostPageProps): Rea
   return (
     <>
       <BlogSeo frontMatter={frontMatter} />
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 pb-10">
         <h1 className="mt-10 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl sm:mt-14">
           {frontMatter.title}
         </h1>
 
-        <div className="relative flex items-center py-4 mt-10 space-x-3 bg-gray-900 rounded-xl px-4 border-gray-500">
+        <div className="relative flex items-center py-4 mt-10 space-x-3 bg-slate-900 bg-opacity-70 rounded-xl px-4 border-gray-500">
           <a
             href="https://twitter.com/VuongDDang"
             target="_blank"
@@ -52,7 +52,7 @@ export default function PostPage({ mdxSource, frontMatter }: PostPageProps): Rea
             </a>
           </div>
         </div>
-        <main className="mt-10 text-gray-300 prose prose-dark md:prose-2xl max-w-none ">
+        <main className="mt-10 text-gray-300 prose prose-dark md:prose-lg max-w-none ">
           <MDXRemote {...mdxSource} components={components} />
         </main>
       </article>

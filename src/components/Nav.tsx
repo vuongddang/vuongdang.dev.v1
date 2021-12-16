@@ -2,7 +2,7 @@ import { ReactElement } from 'react'
 import Link from 'next/link'
 export default function Nav(): ReactElement {
   return (
-    <nav className="flex-shrink-0 bg-black">
+    <nav className="flex-shrink-0 ">
       <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <Link href="/">
@@ -20,12 +20,6 @@ export default function Nav(): ReactElement {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .a {
-          @apply leading-5;
-        }
-      `}</style>
     </nav>
   )
 }
